@@ -28,6 +28,14 @@ function App() {
 
   const balance = totalIncome - totalExpenses;
 
+  const addTransaction = (transaction) => {
+    setTransactions([...transactions, transaction]);
+  };
+
+  const deleteTransaction = (id) => {
+    setTransactions(transactions.filter(t => t.id !== id));
+  };
+
   return (
     <div className="app">
       <h1>Finance Tracker</h1>
@@ -35,9 +43,9 @@ function App() {
 
       <Summary totalIncome={totalIncome} totalExpenses={totalExpenses} balance={balance} />
 
-      <TransactionForm categories={categories} onAdd={(t) => setTransactions([...transactions, t])} />
+      <TransactionForm categories={categories} onAdd={addTransaction} />
 
-      <TransactionList transactions={transactions} categories={categories} />
+      <TransactionList transactions={transactions} categories={categories} onDelete={deleteTransaction} />
     </div>
   );
 }
