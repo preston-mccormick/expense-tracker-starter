@@ -3,6 +3,7 @@ import './App.css'
 import Summary from './Summary'
 import TransactionForm from './TransactionForm'
 import TransactionList from './TransactionList'
+import SpendingChart from './SpendingChart'
 
 const categories = ["food", "housing", "utilities", "transport", "entertainment", "salary", "other"];
 
@@ -44,6 +45,8 @@ function App() {
       <Summary totalIncome={totalIncome} totalExpenses={totalExpenses} balance={balance} />
 
       <TransactionForm categories={categories} onAdd={addTransaction} />
+
+      <SpendingChart transactions={transactions} />
 
       <TransactionList transactions={transactions} categories={categories} onDelete={deleteTransaction} />
     </div>

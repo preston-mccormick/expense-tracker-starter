@@ -25,6 +25,7 @@ Single-page React app with no routing and no backend. All state is in-memory —
 - **`Summary`** — displays the three stat cards; receives `totalIncome`, `totalExpenses`, `balance` as props.
 - **`TransactionForm`** — owns its own form state and calls `onAdd(transaction)` on submit; receives `categories` and `onAdd` as props.
 - **`TransactionList`** — owns filter state and filtering logic; receives `transactions` and `categories` as props.
+- **`SpendingChart`** — renders a recharts `BarChart` of expenses grouped by category, sorted highest to lowest, with percentage labels above each bar and in the tooltip; receives `transactions` as its only prop and derives categories from the data. Returns `null` when there are no expenses.
 
 ### Data model
 
